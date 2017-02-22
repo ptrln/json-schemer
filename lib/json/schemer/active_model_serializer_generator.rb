@@ -29,7 +29,7 @@ module JSON
       end
 
       def association_properties
-        serializer._reflections.map { |r| Properties::ActiveModelSerializerAssociation.new(r) }
+        serializer._reflections.map { |k, r| Properties::ActiveModelSerializerAssociation.new(k, r) }
       end
 
     end

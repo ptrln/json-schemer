@@ -4,14 +4,15 @@ module JSON
   module Schemer
     module Properties
       class ActiveModelSerializerAssociation < ActiveModelSerializerBase
-        attr_reader :reflection
+        attr_reader :key, :reflection
 
-        def initialize(reflection)
+        def initialize(key, reflection)
+          @key        = key
           @reflection = reflection
         end
 
         def name
-          reflection.name
+          options[:key] || reflection.name
         end
 
       private
