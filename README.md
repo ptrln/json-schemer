@@ -1,5 +1,9 @@
 # JSON::Schemer
 
+[![Code Climate](https://lima.codeclimate.com/github/ptrln/json-schemer/badges/gpa.svg)](https://lima.codeclimate.com/github/ptrln/json-schemer)
+
+[![Build Status](https://travis-ci.org/ptrln/json-schemer.svg?branch=master)](https://travis-ci.org/ptrln/json-schemer)
+
 Generate JSON Schema from ActiveModelSerializers!
 
 ## Installation
