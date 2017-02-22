@@ -5,7 +5,11 @@ module JSON
   module Schemer
 
     def self.generate(serializer)
-      ::JSON::Schemer::ActiveModelSerializerGenerator.new(serializer).json_schema
+      if serializer.respond_to?(:_attributes_data) && serializer.respond_to?(:_reflections)
+        ::JSON::Schemer::ActiveModelSerializerGenerator.new(serializer).json_schema
+      else
+        {}
+      end
     end
 
   end
