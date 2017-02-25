@@ -2,6 +2,10 @@
 
 [![Code Climate](https://lima.codeclimate.com/github/ptrln/json_schemer/badges/gpa.svg)](https://lima.codeclimate.com/github/ptrln/json_schemer)
 
+[![Test Coverage](https://lima.codeclimate.com/github/ptrln/json_schemer/badges/coverage.svg)](https://lima.codeclimate.com/github/ptrln/json_schemer/coverage)
+
+[![Issue Count](https://lima.codeclimate.com/github/ptrln/json_schemer/badges/issue_count.svg)](https://lima.codeclimate.com/github/ptrln/json_schemer)
+
 [![Build Status](https://travis-ci.org/ptrln/json_schemer.svg?branch=master)](https://travis-ci.org/ptrln/json_schemer)
 
 Generate JSON Schema from ActiveModelSerializers!
