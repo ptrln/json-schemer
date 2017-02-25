@@ -8,7 +8,7 @@ module JSON
       if serializer.respond_to?(:_attributes_data) && serializer.respond_to?(:_reflections)
         ::JSON::Schemer::ActiveModelSerializerGenerator.new(serializer).json_schema
       else
-        {}
+        nil
       end
     end
 
