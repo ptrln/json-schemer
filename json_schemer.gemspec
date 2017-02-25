@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'json/schemer/version'
+require 'json_schemer/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "json-schemer"
-  spec.version       = JSON::Schemer::VERSION
+  spec.name          = "json_schemer"
+  spec.version       = JSONSchemer::VERSION
   spec.authors       = ["Peter Lin"]
   spec.email         = ["peter@ptrln.com"]
 

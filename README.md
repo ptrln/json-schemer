@@ -1,8 +1,8 @@
-# JSON::Schemer
+# JSONSchemer
 
-[![Code Climate](https://lima.codeclimate.com/github/ptrln/json-schemer/badges/gpa.svg)](https://lima.codeclimate.com/github/ptrln/json-schemer)
+[![Code Climate](https://lima.codeclimate.com/github/ptrln/json_schemer/badges/gpa.svg)](https://lima.codeclimate.com/github/ptrln/json_schemer)
 
-[![Build Status](https://travis-ci.org/ptrln/json-schemer.svg?branch=master)](https://travis-ci.org/ptrln/json-schemer)
+[![Build Status](https://travis-ci.org/ptrln/json_schemer.svg?branch=master)](https://travis-ci.org/ptrln/json_schemer)
 
 Generate JSON Schema from ActiveModelSerializers!
 
@@ -11,7 +11,7 @@ Generate JSON Schema from ActiveModelSerializers!
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'json-schemer'
+gem 'json_schemer'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install json-schemer
+    $ gem install json_schemer
 
 ## Usage
 
@@ -34,5 +34,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/ptrln/json-schemer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ptrln/json_schemer.
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "json/schemer"
+require "json_schemer"
 require "active_model_serializers"
 
 # You can add fixtures and/or initialization code here to make experimenting
