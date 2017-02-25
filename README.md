@@ -28,7 +28,143 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Let's say you have a AMS, like so:
+
+```ruby
+class OrderSerializer < ActiveModel::Serializer
+
+  attribute   :id
+
+  attribute   :user_status, key: :status
+
+  attribute   :created_at
+
+  attribute   :delivered_at, if: -> { true }
+
+  attribute   :pickup_at, unless: -> { true }
+
+  has_many    :items
+
+  has_one     :rating
+
+  belongs_to  :user
+
+end
+```
+
+You can generate a JSON Schema using JSONSchemer, like so:
+
+```ruby
+  JSONSchemer.generate(OrderSerializer)
+```
+
+and get this output:
+
+```javascript
+{
+  "type": "object",
+  "properties": {
+    "id": {
+    },
+    "status": {
+    },
+    "created_at": {
+    },
+    "delivered_at": {
+    },
+    "pickup_at": {
+    },
+    "items": {
+      "type": "array"
+    },
+    "rating": {
+      "type": "object"
+    },
+    "user": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "status",
+    "created_at",
+    "items",
+    "rating",
+    "user"
+  ]
+}
+```
+
+You could also write json_schema right in your serializer, like so:
+
+```ruby
+class OrderSerializer < ActiveModel::Serializer
+
+  attribute   :id, json_schema: {type: :integer}
+
+  attribute   :user_status, key: :status, json_schema: {enum: ["New", "Processing", "Delivered"]}
+
+  attribute   :created_at, json_schema: {type: :string}
+
+  attribute   :delivered_at, if: -> { true }, json_schema: {type: :string}
+
+  attribute   :pickup_at, unless: -> { true }, json_schema: {type: :string}
+
+  has_many    :items
+
+  has_one     :rating
+
+  belongs_to  :user
+
+end
+```
+
+Which would give you this output:
+
+```javascript
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "status": {
+      "enum": [
+        "New",
+        "Processing",
+        "Delivered"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "delivered_at": {
+      "type": "string"
+    },
+    "pickup_at": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array"
+    },
+    "rating": {
+      "type": "object"
+    },
+    "user": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "status",
+    "created_at",
+    "items",
+    "rating",
+    "user"
+  ]
+}
+```
+
 
 ## Development
 
