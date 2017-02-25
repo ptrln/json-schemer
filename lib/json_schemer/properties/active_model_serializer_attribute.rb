@@ -14,6 +14,10 @@ module JSONSchemer
         key
       end
 
+      def schema
+        options[:json_schema] || {}
+      end
+
     private
 
       def options

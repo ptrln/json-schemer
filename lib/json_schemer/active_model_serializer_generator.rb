@@ -12,7 +12,7 @@ module JSONSchemer
     def json_schema
       {
         type:         :object,
-        properties:   properties.map { |p| [p.name, {}] }.to_h,
+        properties:   properties.map { |p| [p.name, p.schema] }.to_h,
         required:     properties.select(&:required?).map(&:name),
       }
     end
