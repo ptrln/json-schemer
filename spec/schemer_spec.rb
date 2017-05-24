@@ -23,4 +23,13 @@ describe JSONSchemer do
 
   end
 
+  describe "mock" do
+
+    it "returns a mocked obj" do
+      expect(::JSONSchemer.mock(OrderSerializer)).to_not be_nil
+    end
+
+
+  end
+
 end

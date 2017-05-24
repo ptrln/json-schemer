@@ -11,4 +11,19 @@ module JSONSchemer
     end
   end
 
+  def self.mock(serializer)
+    schema = generate(serializer)
+    if schema
+      mock_json = {}
+      schema[:properties].each do |name, attributes|
+        if attributes[:examples].present?
+          mock_json[name] = attributes[:examples].sample
+        elsif attributes[:enum].present?
+          mock_json[name] = attributes[:enum].sample
+        end
+      end
+      mock_json
+    end
+  end
+
 end
